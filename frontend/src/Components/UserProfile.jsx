@@ -14,7 +14,7 @@ const UserProfileList = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get("https://admin-panel-host-backend.onrender.com/api/profile/list");
+        const response = await axios.get("http://localhost:5000/api/profile/list");
         setProfiles(response.data);
       } catch (error) {
         console.error("Error fetching profiles:", error);

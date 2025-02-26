@@ -35,7 +35,7 @@ const Dashboard = () => {
           throw new Error("No token found. Please log in.");
         }
 
-        const res = await axios.get("https://admin-panel-host-backend.onrender.com/api/admin/admin", {
+        const res = await axios.get("http://localhost:5000/api/admin/admin", {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${token}`, 
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("https://admin-panel-host-backend.onrender.com/api/admin/logout", {}, { withCredentials: true });
+      await axios.post("http://localhost:5000/api/admin/logout", {}, { withCredentials: true });
       
       localStorage.removeItem("token"); 
       navigate("/login");

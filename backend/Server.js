@@ -2,9 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const connectDB = require("./Config/DB");
-const authRoutes = require("./Controllers/AdminController")
-const ProfileRoutes = require ("./Controllers/ProfileController")
+const connectDB = require("./config/db");
+const authRoutes = require("./controllers/AdminController")
+const ProfileRoutes = require ("./controllers/ProfileController")
 
 dotenv.config();
 const app = express();
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://admin-panel-host-frontend.onrender.com", 
+    origin: "http://localhost:5173", 
     credentials: true, 
   })
 );

@@ -54,7 +54,7 @@ const Register = () => {
 
     try {
       await axios.post(
-        "https://admin-panel-host-backend.onrender.com/api/admin/register",
+        "http://localhost:5000/api/admin/register",
         {
           name,
           email: email.toLowerCase(),
