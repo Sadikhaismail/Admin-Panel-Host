@@ -2,9 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const connectDB = require("./config/db");
-const authRoutes = require("./controllers/AdminController")
-const ProfileRoutes = require ("./controllers/ProfileController")
+const connectDB = require("./Config/DB");
+const authRoutes = require("./Controllers/AdminController")
+const ProfileRoutes = require ("./Controllers/ProfileController")
 
 dotenv.config();
 const app = express();
