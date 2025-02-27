@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
-mongoose.connection.on("error", (err) => {
-  console.error("MongoDB Connection Error:", err);
-});
-mongoose.connection.on("disconnected", () => {
-  console.log("MongoDB Disconnected. Reconnecting...");
-});
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB Connected...");
+  } catch (error) {
+    console.error("Database connection failed:", error.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
