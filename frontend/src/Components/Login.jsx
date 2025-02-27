@@ -41,7 +41,8 @@ const Login = () => {
       });
 
       setTimeout(() => {
-        navigate("/dashboard"); 
+        console.log("Navigating to Dashboard...");
+        navigate("/dashboard");
       }, 1500);
 
       
