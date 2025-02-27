@@ -16,10 +16,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: "https://admin-panel-host-frontend.onrender.com", 
     credentials: true, 
   })
 );
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API is working!" });
+});
 
 app.use("/api/admin", authRoutes);
 app.use("/api/profile", ProfileRoutes);
